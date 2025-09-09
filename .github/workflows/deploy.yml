@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -21,17 +21,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
+      - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Ensure SPA 404 fallback
-        run: |
-          cp index.html 404.html || true
-
-      - name: Upload artifact
+      # Your site is pure static (index.html, 404.html, assets, src)
+      # so just upload the repo root as the artifact.
+      - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: .
 
   deploy:
     needs: build
