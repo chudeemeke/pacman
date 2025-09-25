@@ -19,3 +19,9 @@ A clean, modern, offline-ready Pac-Man built with Canvas and vanilla ES Modules.
 
 ## Structure
 See repository tree for all files.
+
+## 🤖 CI/CD Auto-Fix
+
+This repository uses Claude AI to automatically fix CI/CD failures.
+If builds fail, Claude will automatically create a fix PR.
+
